@@ -23,6 +23,11 @@ const addData = () => {
     position: ''
   };
 };
+const Delete = (index) => {
+  
+    items.value.splice(index, 1);
+  
+}
 </script>
 
 <template>
@@ -58,6 +63,7 @@ const addData = () => {
         <div class="col-2 themed-grid-col">{{ item.email }}</div>
         <div class="col-2 themed-grid-col">{{ item.phone }}</div>
         <div class="col-2 themed-grid-col">{{ item.position }}</div>
+        <div class="col-1 themed-grid-col"><button type="button" class="btn btn-danger" @click="Delete(index)">удалить</button></div>
       </div>
     </div>
 
@@ -65,7 +71,7 @@ const addData = () => {
       <form action="" class="form">
         <input type="text" class="form-control" v-model="newItem.tabNumber" placeholder="Таб номер">
         <input type="text" class="form-control" v-model="newItem.fullName" placeholder="ФИО">
-        <input type="text" class="form-control" v-model="newItem.email" placeholder="email">
+        <input type="email" class="form-control" v-model="newItem.email" placeholder="email">
         <input type="text" class="form-control" v-model="newItem.phone" placeholder="телефон">
         <select name="" id="" class="form-select" v-model="newItem.position">
           <option value="Программист">Программист</option>
